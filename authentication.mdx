@@ -1,0 +1,157 @@
+---
+title: Authentication and Security
+description: Learn how to manage user access, permissions, and secure your documentation spaces in Next Step Conrad.
+---
+
+## Overview
+
+Next Step Conrad provides robust authentication and security features to protect your project documentation. You can manage user access through multiple login methods, assign role-based permissions, generate API tokens for integrations, and configure encryption settings. These tools ensure secure collaboration across teams while maintaining data privacy.
+
+<Callout kind="info">
+  Enable multi-factor authentication (MFA) for all team members to add an extra layer of security.
+</Callout>
+
+## Authentication Methods
+
+Next Step Conrad supports several login options. Choose the method that best fits your team's needs.
+
+<Tabs>
+  <Tab title="Email/Password" icon="mail">
+    Use your email and password to log in at `https://nextstepconrad.com/login`.
+    
+    ```javascript
+    // Example login request
+    const response = await fetch('https://api.nextstepconrad.com/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: 'user@example.com',
+        password: 'your-password'
+      })
+    });
+    ```
+  </Tab>
+  
+  <Tab title="OAuth (Google)" icon="github">
+    Connect your Google account for seamless single sign-on.
+    
+    1. Visit `https://nextstepconrad.com/auth/google`.
+    2. Authorize the app.
+    3. Return to your dashboard.
+  </Tab>
+  
+  <Tab title="MFA Setup" icon="shield">
+    After initial login, enable MFA in account settings.
+    
+    <Steps>
+      <Step title="Enable MFA" icon="settings">
+        Go to **Account > Security**.
+      </Step>
+      <Step title="Scan QR Code" icon="camera">
+        Use your authenticator app to scan the code.
+      </Step>
+      <Step title="Verify" icon="check-circle">
+        Enter the 6-digit code to confirm.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Role-Based Permissions
+
+Assign roles to control access to documentation spaces. Use the admin dashboard to manage permissions.
+
+<Columns cols={2}>
+  <Card title="Admin" icon="shield" href="/configuration">
+    Full access: Create, edit, delete spaces and manage users.
+  </Card>
+  <Card title="Editor" icon="edit" href="/guides">
+    Edit documents and invite collaborators.
+  </Card>
+  <Card title="Viewer" icon="eye" href="/quickstart">
+    Read-only access to content.
+  </Card>
+  <Card title="Custom" icon="settings">
+    Define granular permissions per space.
+  </Card>
+</Columns>
+
+## API Token Generation
+
+Generate secure API tokens for integrations like CI/CD pipelines or third-party tools.
+
+<Steps>
+  <Step title="Navigate to Tokens" icon="key">
+    Go to **Account > API Tokens**.
+  </Step>
+  <Step title="Create Token" icon="plus">
+    Click **New Token**, select scopes (read, write).
+  </Step>
+  <Step title="Copy Token" icon="copy">
+    Copy the generated token immediately—it won't be shown again.
+  </Step>
+</Steps>
+
+Use the token in requests:
+
+<CodeGroup tabs="JavaScript,Python,cURL">
+  ```javascript
+  const response = await fetch('https://api.nextstepconrad.com/docs', {
+    headers: {
+      'Authorization': `Bearer ${YOUR_API_TOKEN}`
+    }
+  });
+  ```
+  ```python
+  import requests
+  headers = {'Authorization': f'Bearer {YOUR_API_TOKEN}'}
+  response = requests.get('https://api.nextstepconrad.com/docs', headers=headers)
+  ```
+  ```bash
+  curl -H "Authorization: Bearer YOUR_API_TOKEN" https://api.nextstepconrad.com/docs
+  ```
+</CodeGroup>
+
+<ParamField header="Authorization" param-type="string" required="true">
+  Bearer token format: `Bearer YOUR_API_TOKEN`.
+</ParamField>
+
+<ParamField query="space_id" param-type="string" required="false">
+  Filter docs by space ID.
+</ParamField>
+
+## Security Best Practices
+
+<Callout kind="alert">
+  Never share API tokens in public repositories or client-side code. Rotate tokens regularly and use the principle of least privilege for permissions.
+</Callout>
+
+## Data Encryption and Privacy
+
+All data in Next Step Conrad is encrypted at rest using AES-256 and in transit with TLS 1.3. You control privacy settings per space.
+
+<Expandable title="Advanced Encryption Options" default-open="false">
+  Enable client-side encryption for sensitive spaces:
+  
+  ```javascript
+  const client = new NextStepConradClient({
+    apiKey: 'YOUR_API_KEY',
+    encryptionKey: 'your-32-char-encryption-key'
+  });
+  ```
+  
+  Privacy exports comply with GDPR—request via **Account > Data Export**.
+</Expandable>
+
+## Troubleshooting Access Issues
+
+Common issues and fixes:
+
+| Issue | Solution |
+|-------|----------|
+| Login fails | Reset password at `https://nextstepconrad.com/reset`. |
+| Token expired | Generate a new token in settings. |
+| Permission denied | Check role assignments in space settings. |
+| MFA not working | Verify time sync on your device. |
+
+If issues persist, contact support at support@nextstepconrad.com.

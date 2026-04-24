@@ -1,0 +1,117 @@
+---
+title: Core Features of Next Step Conrad
+description: Explore the essential capabilities of Next Step Conrad, including tools for structuring, editing, and collaborating on documentation.
+---
+
+## Overview
+
+Next Step Conrad provides powerful tools to manage your project documentation effectively. You can structure content into hierarchies, edit with rich formatting, collaborate seamlessly with teams, track changes via version control, and discover information quickly through search. These features help you maintain organized, up-to-date docs from scratch.
+
+<Columns cols={3}>
+  <Card title="Hierarchies & Folders" icon="folder" href="/guides/organizing">
+    Build nested folder structures for clear navigation.
+  </Card>
+  <Card title="Editing Tools" icon="edit-3" href="/guides/editing">
+    Format content with markdown and visual editors.
+  </Card>
+  <Card title="Team Collaboration" icon="users" href="/guides/collaboration">
+    Share, review, and co-edit docs in real time.
+  </Card>
+  <Card title="Version Control" icon="git-branch" href="/guides/versioning">
+    Track changes and revert to previous versions.
+  </Card>
+  <Card title="Search & Discovery" icon="search" href="/guides/search">
+    Find content instantly across your spaces.
+  </Card>
+  <Card title="Export Options" icon="download" href="/guides/export">
+    Generate PDFs, HTML, or Markdown exports.
+  </Card>
+</Columns>
+
+## Organizing Hierarchies and Folders
+
+Create intuitive folder structures to mirror your project's architecture. Start by nesting pages within folders for logical grouping, such as `/docs/api/reference` or `/guides/user-flows`.
+
+<Steps>
+  <Step title="Create a Folder" icon="folder-plus">
+    Navigate to your space root. Click the `+` button and select `New Folder`. Name it descriptively, like `API Reference`.
+  </Step>
+  <Step title="Add Pages" icon="file-plus">
+    Inside the folder, create new pages. Drag and drop to reorder or nest further.
+  </Step>
+  <Step title="Set Permissions" icon="shield">
+    Right-click the folder to configure view/edit access for team members.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Use consistent naming conventions like kebab-case (`user-guide`) for better searchability.
+</Callout>
+
+## Editing and Formatting Tools
+
+Edit docs using markdown or a WYSIWYG editor. Support includes headings, lists, code blocks, tables, and embeds.
+
+<Tabs>
+  <Tab title="Markdown" icon="code">
+    Write structured content with familiar syntax.
+
+````markdown
+# Heading 1
+## Heading 2
+
+- List item
+- Another item
+
+```javascript
+console.log("Hello, docs!");
+```
+````
+  </Tab>
+  <Tab title="Visual Editor" icon="edit-3">
+    Toggle to visual mode for drag-and-drop formatting. Insert images via `https://images.unsplash.com/photo-...` or tables without syntax.
+  </Tab>
+</Tabs>
+
+## Collaboration Features for Teams
+
+Invite team members to spaces and assign roles like Editor or Viewer. Enable real-time co-editing with live cursors and comments.
+
+<CodeGroup tabs="Invite,Share">
+```javascript
+// API to invite user (if integrated)
+await fetch('https://api.example.com/spaces/{spaceId}/invites', {
+  method: 'POST',
+  headers: { 'Authorization': 'Bearer YOUR_TOKEN' },
+  body: JSON.stringify({ email: 'team@company.com', role: 'editor' })
+});
+```
+```bash
+# CLI command for sharing
+nsc share --space my-docs --email team@company.com --role editor
+```
+</CodeGroup>
+
+## Version Control for Changes
+
+Every edit creates a version snapshot. View history, compare diffs, and restore previous states.
+
+<Expandable title="Advanced Version Workflow" default-open="false">
+  Branch docs for experiments:
+
+  1. Create a branch from main.
+  2. Edit freely.
+  3. Merge with conflict resolution.
+
+  This prevents breaking live docs during reviews.
+</Expandable>
+
+## Search and Discovery
+
+Use full-text search across spaces. Filters by folder, tag, or date help narrow results.
+
+<Callout kind="info">
+  Pro tip: Add tags like `api`, `guide` to pages for refined queries, e.g., search `api endpoint`.
+</Callout>
+
+Ready to dive deeper? Check the [quickstart](/quickstart) or [authentication](/authentication) guides.
