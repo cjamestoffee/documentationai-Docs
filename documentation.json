@@ -50,6 +50,17 @@
                 "icon": "lock"
               }
             ]
+          },
+          {
+            "group": "Privacy Policy",
+            "pages": [
+              {
+                "title": "Privacy Policy for ElementBlocker",
+                "path": "privacy-policy-for-elementblocker"
+              }
+            ],
+            "icon": "alert-octagon-icon",
+            "path": "privacy-policy"
           }
         ]
       },
