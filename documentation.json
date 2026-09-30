@@ -55,6 +55,10 @@
             "group": "Privacy Policy",
             "pages": [
               {
+                "title": "StoryPage Privacy Policy",
+                "path": "storypage-privacy-policy"
+              },
+              {
                 "title": "Privacy Policy for ElementBlocker",
                 "path": "privacy-policy-for-elementblocker"
               }
