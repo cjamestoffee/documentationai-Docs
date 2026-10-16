@@ -1,33 +1,49 @@
 ---
 title: Privacy Policy for StoryPage
-description: 'Last Updated: September 30, 2026'
+description: 'Last updated: October 16, 2026'
 ---
-StoryPage ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and protect your information when you use our Chrome Extension.
+StoryPage is a browser extension from Next Step Conrad that lets a user select or capture webpage content and transform it into an editable illustrated story, comic, coloring page, or educational resource.
 
-**1. Data Collected** To provide our core content transformation functionality, we process the following categories of user data:
+## Information StoryPage handles
 
-- **Website content:** We capture article text, selected text, visible transcripts, and video frames from your active tab strictly when you initiate a capture to generate a story or artwork.
-- **Authentication information:** We collect the user-supplied API keys you provide to connect with third-party AI services (OpenAI, Google Gemini, Anthropic Claude, xAI Grok, and [KIE.ai](http://KIE.ai)).
-- **Personally identifiable information:** If you purchase StoryPage Pro, we process the information necessary to verify your license status via our API ([api.nextstepconrad.com](http://api.nextstepconrad.com)).
+StoryPage handles information only when needed for a feature the user chooses:
 
-**2. Data Sharing & Third-Party Services** Because StoryPage acts as a bridge between your browser and AI generators, data sharing is strictly limited to the services you choose to enable:
+- Website content, page titles, page URLs, selected text, and visible transcripts when the user chooses to capture a source page.
+- A visible video frame or visible-tab image when the user requests a feature that uses visual source context and the page permits capture.
+- Story text, prompts, settings, generated artwork, and exported documents.
+- API credentials the user supplies for an AI provider.
+- A StoryPage Pro license or subscription activation key and entitlement status.
+- Subscription identifiers, monthly credit usage, request identifiers, and cost reservations used to enforce included AI allowances.
+- An email address associated with a Stripe purchase, when supplied during Checkout, for purchase fulfillment and license support.
 
-- **AI Providers:** When you generate a story, comic, or artwork, the specific website content you captured is sent directly to the AI provider you have actively selected and configured with your API key.
-- **Payment Processing:** StoryPage Pro checkout is hosted externally on Stripe. We do not collect, process, or store your credit card numbers or financial statements.
-- We do not sell your data or share it with any third parties other than your chosen AI provider and our secure license verification server.
+## How information is used
 
-**3. Limited Use Disclosure** StoryPage complies fully with the Chrome Web Store User Data Policy. We explicitly certify the following regarding your data:
+Captured content and user instructions are used only to provide StoryPage’s user-facing creation, editing, continuity, storage, and export features. When a user starts an AI operation, StoryPage sends the content required for that operation directly to the AI provider selected by the user when using their own keys.
 
-- **Affirmative Statement of Compliance:** The use of information received from Google APIs will adhere to the Chrome Web Store User Data Policy, including the Limited Use requirements.
-- **Single Purpose Use:** We do not use or transfer user data for purposes that are unrelated to our item's single purpose of transforming webpage and video content into illustrated stories, comics, coloring books, or storyboards.
-- **Financial Protections:** We do not use or transfer user data to determine creditworthiness or for lending purposes.
+When the user chooses included subscription credits, required text, prompts, and reference images pass through the Next Step Conrad service hosted on Cloudflare to OpenAI. The business OpenAI key stays encrypted on the server and is never sent to the extension. StoryPage does not persist these prompts or images in its server-side usage ledger. The provider’s own terms and privacy policy apply to that processing.
 
-**4. Data Storage and Security** We collect the absolute minimum data required to operate.
+StoryPage sends checkout and license requests to the Next Step Conrad StoryPage service. Payment details are collected and processed on Stripe-hosted pages; StoryPage does not receive or store complete payment-card information.
 
-- Your chosen AI provider API keys, extension settings, and generated books are stored locally within your browser.
-- We do not maintain centralized databases or external servers that store your generated books or browsing content.
-- All communications between the extension, your chosen AI providers, and our license verification server are transmitted via secure, encrypted connections (HTTPS).
+## Storage and retention
 
-**5. Changes to This Privacy Policy** We may update our Privacy Policy from time to time. You are advised to review this page periodically for any changes.
+Provider credentials, settings, entitlement status, and generated projects are stored locally in the user’s Chrome profile. Books and artwork are stored in local browser storage until the user deletes them or removes the extension. Information sent to an AI provider or Stripe is retained according to that provider’s policies. License records are retained by Next Step Conrad for as long as needed to provide, restore, secure, and support the purchased license. Subscription activation records and usage accounting are retained as needed for billing, allowance enforcement, fraud prevention, and support.
 
-**6. Contact Us** If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at [cjamestoffee@gmail.com](mailto:cjamestoffee@gmail.com).
+## Sharing and sale of data
+
+Next Step Conrad does not sell user data. Information is shared only with the service selected or required to perform a requested feature, including the user’s selected AI provider, Stripe for checkout, and infrastructure providers needed to operate license verification, subscription billing, and included AI processing. StoryPage does not use browsing activity for advertising, credit decisions, or unrelated profiling.
+
+## Limited use
+
+StoryPage’s use and transfer of information received from Google APIs complies with the Chrome Web Store User Data Policy, including the Limited Use requirements. Data is used only to provide or improve the extension’s prominent user-facing features.
+
+## Security
+
+Network requests use HTTPS. Provider credentials are restricted to trusted extension contexts and are not included in exported books. Users should protect their provider and license keys and revoke a provider key if they believe it has been exposed.
+
+## User choices
+
+Users choose when to capture a page and when to send content to an AI provider. They can clear provider credentials in Settings, delete locally stored books, export backups, or uninstall StoryPage to remove extension-managed local data. Subscribers can select their own API keys or included credits in the Pro page, and open Manage billing / cancel to cancel renewal. Users can contact Next Step Conrad to request support for purchase, subscription, usage, and license records.
+
+## Contact
+
+For privacy or support questions, visit [https://www.nextstepconrad.com/](https://www.nextstepconrad.com/) or email [cjamestoffee@gmail.com](mailto:cjamestoffee@gmail.com).
