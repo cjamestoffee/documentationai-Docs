@@ -135,5 +135,10 @@
         ]
       }
     ]
+  },
+  "integrations": {
+    "ga4": {
+      "measurementId": "G-VD32YGQSQ3"
+    }
   }
 }
